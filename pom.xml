@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!--
+
+    Copyright 2008 Marvin Herman Froeder
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>me.imcj</groupId>
+  <artifactId>travis</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>swf</packaging>
+
+  <name>travis Flex</name>
+
+  <properties>
+    <flex-mojos.version>3.8</flex-mojos.version>
+    <flex-sdk.version>4.5.1.21328</flex-sdk.version>
+  </properties>
+  
+  <build>
+    <sourceDirectory>src/main/flex</sourceDirectory>
+    <testSourceDirectory>src/test/flex</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.flexmojos</groupId>
+        <artifactId>flexmojos-maven-plugin</artifactId>
+        <version>${flex-mojos.version}</version>
+        <extensions>true</extensions>
+        <dependencies>
+          <dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>compiler</artifactId>
+            <version>${flex-sdk.version}</version>
+            <type>pom</type>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>flex-framework</artifactId>
+      <version>${flex-sdk.version}</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.adobe.flexunit</groupId>
+      <artifactId>flexunit</artifactId>
+      <version>0.85</version>
+      <type>swc</type>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>air-framework</artifactId>
+      <version>${flex-sdk.version}</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>flex-mojos-repository</id>
+      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>yoolab.org-releases</id>
+      <url>http://projects.yoolab.org/maven/content/repositories/releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>yoolab.org-snapshots</id>
+      <url>http://projects.yoolab.org/maven/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>flexmojos-repository</id>
+      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>flexpmd.opensource.adobe</id>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <name>FlexPMD repository on opensource.adobe.com</name>
+      <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
