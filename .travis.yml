@@ -1,3 +1,4 @@
 language: java
+scripts: mvn test
 jdk:
   - openjdk7
