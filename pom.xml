@@ -40,6 +40,13 @@
         <artifactId>flexmojos-maven-plugin</artifactId>
         <version>${flex-mojos.version}</version>
         <extensions>true</extensions>
+        <configuration>
+                <testRunner>
+                  <launcher>
+                    <flashplayerCommand>${flex.flashPlayer.command}</flashplayerCommand>
+                  </launcher>
+                </testRunner>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>com.adobe.flex</groupId>
