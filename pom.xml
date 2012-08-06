@@ -28,6 +28,7 @@
   <properties>
     <flex-mojos.version>3.8</flex-mojos.version>
     <flex-sdk.version>4.5.1.21328</flex-sdk.version>
+    <flex.flashPlayer.command>/home/vagrant/builds/shitou/travis/bin/flashplayerdebugger</flex.flashPlayer.command>
   </properties>
   
   <build>
